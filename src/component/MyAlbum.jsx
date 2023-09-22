@@ -45,7 +45,7 @@ const MyAlbum = () => {
                         onClick={() => {
                           dispatch(playerInfo(track));
                         }}
-                        className="bg-transparent  fw-bold text-light border border-dark border-4 p-0"
+                        className="bg-transparent  fw-bold text-light border border-info border-4 p-0 my-2"
                         key={`track-${i}`}
                       >
                         <Container className="d-flex justify-content-between">
