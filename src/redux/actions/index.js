@@ -97,7 +97,7 @@ export const playerInfo = (track) => {
   };
 };
 
-export const like = (track) => {
+export const putLike = (track) => {
   return async (dispatch, getState) => {
     dispatch({ type: PUT_LIKE, payload: track });
   };

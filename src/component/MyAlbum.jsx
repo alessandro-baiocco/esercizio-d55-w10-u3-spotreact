@@ -3,7 +3,7 @@ import { Button, Col, Container, Row, Card, ListGroup, ListGroupItem } from "rea
 import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { albumSearch, like, playerInfo } from "../redux/actions";
+import { albumSearch, playerInfo, putLike } from "../redux/actions";
 
 const MyAlbum = () => {
   const { albumId } = useParams();
@@ -57,11 +57,11 @@ const MyAlbum = () => {
                               : `0${Math.floor(track.duration % 60)}`}
                           </p>
                           {likeArr?.includes(track.id) ? (
-                            <Button className="ms-3" onClick={() => dispatch(like(track.id))}>
+                            <Button className="ms-3" onClick={() => dispatch(putLike(track))}>
                               <i className="bi bi-star-fill"></i>
                             </Button>
                           ) : (
-                            <Button className="ms-3" onClick={() => dispatch(like(track.id))}>
+                            <Button className="ms-3" onClick={() => dispatch(putLike(track))}>
                               <i className="bi bi-star"></i>
                             </Button>
                           )}

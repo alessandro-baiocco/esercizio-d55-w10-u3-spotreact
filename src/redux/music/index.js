@@ -4,6 +4,7 @@ import artistResult from "../reducers/artistQuery";
 import albumResult from "../reducers/albums";
 import tracksResult from "../reducers/tracksQuery";
 import player from "../reducers/player";
+import like from "../reducers/like";
 
 const rootReducer = combineReducers({
   search: searchResult,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   album: albumResult,
   tracks: tracksResult,
   player: player,
+  like: like,
 });
 
 export const music = configureStore({
