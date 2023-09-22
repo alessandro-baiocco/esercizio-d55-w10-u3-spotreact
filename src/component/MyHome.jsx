@@ -48,7 +48,8 @@ const MyHome = () => {
                           </Card.Body>
                           <ListGroup className="list-group-flush">
                             <ListGroup.Item>
-                              <Link to={`/artist/${songInfo.artist.id}`}>artist:{songInfo.artist.name}</Link>{" "}
+                              <p className="text-light">artist:</p>
+                              <Link to={`/artist/${songInfo.artist.id}`}>{songInfo.artist.name}</Link>{" "}
                             </ListGroup.Item>
                           </ListGroup>
                         </Card>
@@ -75,7 +76,8 @@ const MyHome = () => {
                             </Card.Body>
                             <ListGroup className="list-group-flush">
                               <ListGroup.Item>
-                                <Link to={`/artist/${songInfo.artist.id}`}>artist:{songInfo.artist.name}</Link>{" "}
+                                <p className="text-light">artist:</p>
+                                <Link to={`/artist/${songInfo.artist.id}`}>{songInfo.artist.name}</Link>{" "}
                               </ListGroup.Item>
                             </ListGroup>
                           </Card>
@@ -138,7 +140,8 @@ const MyHome = () => {
                             </Card.Body>
                             <ListGroup className="list-group-flush">
                               <ListGroup.Item>
-                                <Link to={`/artist/${songInfo.artist.id}`}>artist:{songInfo.artist.name}</Link>{" "}
+                                <p className="text-light">artist:</p>
+                                <Link to={`/artist/${songInfo.artist.id}`}>{songInfo.artist.name}</Link>{" "}
                               </ListGroup.Item>
                             </ListGroup>
                           </Card>

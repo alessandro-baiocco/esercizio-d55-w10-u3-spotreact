@@ -6,8 +6,8 @@ import tracksResult from "../reducers/tracksQuery";
 import player from "../reducers/player";
 import like from "../reducers/like";
 import popResult from "../reducers/pop";
-import rockResult from "../reducers/pop";
-import jazzResult from "../reducers/pop";
+import rockResult from "../reducers/rock";
+import jazzResult from "../reducers/jazz";
 
 const rootReducer = combineReducers({
   search: searchResult,
