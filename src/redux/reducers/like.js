@@ -1,7 +1,7 @@
 import { PUT_LIKE } from "../actions";
 
 const initialState = {
-  content: null,
+  content: [],
 };
 
 const like = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const like = (state = initialState, action) => {
     case PUT_LIKE:
       return {
         ...state,
-        content: [...action.payload],
+        content: [...state.content, action.payload],
       };
 
     default:
