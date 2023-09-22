@@ -18,7 +18,7 @@ const MyAlbum = () => {
   }, []);
 
   return (
-    <Container fluid className="d-flex justify-content-end">
+    <Container fluid className="d-flex justify-content-end" style={{ height: "calc(100vh - 84px)", overflowY: "auto" }}>
       <Col xs={12} md={9} className="offset-md-3 mainPage">
         <Row className="mb-3">
           <Col xs={9} lg={11} className="mainLinks d-none d-md-flex text-center">
@@ -42,14 +42,18 @@ const MyAlbum = () => {
                   {tracksResult &&
                     tracksResult.map((track, i) => (
                       <ListGroupItem
-                        onClick={() => {
-                          dispatch(playerInfo(track));
-                        }}
                         className="bg-transparent  fw-bold text-light border border-info border-4 p-0 my-2"
                         key={`track-${i}`}
                       >
                         <Container className="d-flex justify-content-between">
-                          <p className="me-auto">{track.title}</p>
+                          <p
+                            className="me-auto"
+                            onClick={() => {
+                              dispatch(playerInfo(track));
+                            }}
+                          >
+                            {track.title}
+                          </p>
                           <p>
                             {Math.floor(track.duration / 60)}:
                             {track.duration % 60 >= 9
