@@ -6,6 +6,7 @@ export const ALBUM_QUERY = "ALBUM_QUERY";
 export const TRACKS_QUERY = "TRACKS_QUERY";
 export const PLAYER = "PLAYER";
 export const PUT_LIKE = "PUT_LIKE";
+export const REMOVE_LIKE = "REMOVE_LIKE";
 
 //------------------header
 let headers = new Headers({
@@ -100,5 +101,10 @@ export const playerInfo = (track) => {
 export const putLike = (track) => {
   return async (dispatch, getState) => {
     dispatch({ type: PUT_LIKE, payload: track.id });
+  };
+};
+export const removeLike = (track) => {
+  return async (dispatch, getState) => {
+    dispatch({ type: REMOVE_LIKE, payload: track.id });
   };
 };
