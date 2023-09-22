@@ -4,6 +4,9 @@ export const SEARCH = "SEARCH";
 export const ARTIST_QUERY = "ARTIST_QUERY";
 export const ALBUM_QUERY = "ALBUM_QUERY";
 export const TRACKS_QUERY = "TRACKS_QUERY";
+export const POP_QUERY = "POP_QUERY";
+export const ROCK_QUERY = "ROCK_QUERY";
+export const JAZZ_QUERY = "JAZZ_QUERY";
 export const PLAYER = "PLAYER";
 export const PUT_LIKE = "PUT_LIKE";
 export const REMOVE_LIKE = "REMOVE_LIKE";
@@ -106,5 +109,66 @@ export const putLike = (track) => {
 export const removeLike = (track) => {
   return async (dispatch, getState) => {
     dispatch({ type: REMOVE_LIKE, payload: track.id });
+  };
+};
+
+export const rockSearch = () => {
+  return async (dispatch, getState) => {
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=rock", {
+        method: "GET",
+        headers,
+      });
+
+      if (response.ok) {
+        let result = await response.json(); // transforms the response to json
+        let songs = result.data; // gets the songs info
+        dispatch({ type: ROCK_QUERY, payload: songs });
+      } else {
+        console.log("error");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const popSearch = () => {
+  return async (dispatch, getState) => {
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=pop", {
+        method: "GET",
+        headers,
+      });
+
+      if (response.ok) {
+        let result = await response.json(); // transforms the response to json
+        let songs = result.data; // gets the songs info
+        dispatch({ type: POP_QUERY, payload: songs });
+      } else {
+        console.log("error");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const jazzSearch = () => {
+  return async (dispatch, getState) => {
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=jazz", {
+        method: "GET",
+        headers,
+      });
+
+      if (response.ok) {
+        let result = await response.json(); // transforms the response to json
+        let songs = result.data; // gets the songs info
+        dispatch({ type: JAZZ_QUERY, payload: songs });
+      } else {
+        console.log("error");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 };
